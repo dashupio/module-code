@@ -9,14 +9,15 @@ const CodeField = require('./fields/code');
  * export module
  */
 class CoreModule extends Module {
+  
   /**
    * field register
    *
-   * @param register
+   * @param fn
    */
-  fields(register) {
+  register(fn) {
     // register code field
-    register(CodeField);
+    fn('field', CodeField);
   }
 }
 

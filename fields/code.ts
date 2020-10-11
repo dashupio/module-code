@@ -1,11 +1,11 @@
 
 // import field interface
-import { Field } from '@dashup/module';
+import { Struct } from '@dashup/module';
 
 /**
  * build address helper
  */
-export default class CodeField extends Field {
+export default class CodeField extends Struct {
   /**
    * returns object of views
    */
