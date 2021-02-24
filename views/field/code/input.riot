@@ -31,6 +31,12 @@
       onChange(e) {
         // set value
         this.value = this.val();
+
+        // check form
+        if (this.props.form) {
+          // update
+          this.props.dataAction(this.props.field, this.value);
+        }
       }
     
       /**
