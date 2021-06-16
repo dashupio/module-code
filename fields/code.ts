@@ -12,9 +12,10 @@ export default class CodeField extends Struct {
   get views() {
     // return object of views
     return {
-      view    : 'field/code/view',
-      input   : 'field/code/input',
-      display : 'field/code/display',
+      code : 'code',
+
+      view  : 'field/code/view',
+      input : 'field/code',
     };
   }
   
