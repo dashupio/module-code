@@ -18,6 +18,16 @@ export default class CodeField extends Struct {
       input : 'field/code',
     };
   }
+  /**
+   * returns object of views
+   */
+  get data() {
+    // return object of views
+    return {
+      filter    : 'text',
+      operators : ['$eq', '$ne', '$inc', '$ninc'],
+    };
+  }
   
   /**
    * returns field type
