@@ -33,9 +33,8 @@ const Code = (props = {}) => {
     <CodeMirror
       value={ value }
       options={ {
-        mode        : props.mode || 'javascript',
-        theme       : 'one-dark',
-        lineNumbers : true
+        mode  : props.mode || 'javascript',
+        theme : 'one-dark',
       } }
       onChange={ (editor, data, value) => {
         // on change
