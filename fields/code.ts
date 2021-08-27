@@ -32,6 +32,14 @@ export default class CodeField extends Struct {
   /**
    * returns field type
    */
+  get icon() {
+    // return field type label
+    return 'fad fa-code';
+  }
+  
+  /**
+   * returns field type
+   */
   get type() {
     // return field type label
     return 'code';
