@@ -1,6 +1,5 @@
 // import dependencies
-import { View } from '@dashup/ui';
-import { Form } from 'react-bootstrap';
+import { View, Form } from '@dashup/ui';
 import React, { useState } from 'react';
 
 // field code
