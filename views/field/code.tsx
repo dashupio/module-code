@@ -1,6 +1,6 @@
 // import dependencies
-import { View, Form } from '@dashup/ui';
 import React, { useState } from 'react';
+import { View, Box, TextField } from '@dashup/ui';
 
 // field code
 const FieldCode = (props = {}) => {
@@ -9,31 +9,30 @@ const FieldCode = (props = {}) => {
 
   // return jsx
   return (
-    <Form.Group className={ props.noLabel ? '' : 'mb-3' } controlId={ props.field.uuid }>
-      { !props.noLabel && (
-        <Form.Label>
-          { props.field.label || (
-            <a href="#!" onClick={ (e) => !props.onConfig(props.field) && e.preventDefault() }>
-              <i>Set Label</i>
-            </a>
-          ) }  
-        </Form.Label>
-      ) }
-      <View
-        type="field"
-        view="code"
-        struct="code"
-        mode={ props.field.mode }
-        value={ value }
-        dashup={ props.dashup }
-        onChange={ (val) => props.onChange(props.field, val) }
-        />
-      { !!props.field.help && !props.noLabel && (
-        <Form.Text className="text-muted">
-          { props.field.help }
-        </Form.Text>
-      ) }
-    </Form.Group>
+    <TextField
+      type="hidden"
+      label={ props.field.label }
+      color={ props.isInline ? 'transparent' : props.field?.color?.hex }
+      value="working"
+      fullWidth
+      helperText={ props.field.help }
+      InputProps={ {
+        startAdornment : (
+          <Box flex={ 1 } pr={ 1 } pb={ 1 } pt={ 2 }>
+            <View
+              type="field"
+              view="code"
+              struct="code"
+              mode={ props.field.mode }
+              value={ value }
+              dashup={ props.dashup }
+              onChange={ (v) => props.onChange(props.field, v) }
+            />
+          </Box>
+        ),
+      } }
+      placeholder={ props.field.placeholder || `Enter ${props.field.label}` }
+    />
   );
 };
 

@@ -7,6 +7,9 @@ import 'codemirror/mode/xml/xml';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/handlebars/handlebars';
 
+// import scss
+import './styles';
+
 // global timer
 let timer;
 
